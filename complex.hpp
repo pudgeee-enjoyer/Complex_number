@@ -51,3 +51,9 @@ std::istream& operator>>(std::istream& in, my::Complex& z);
 //custom literals to support algebraic form of my::Complex
 my::Complex operator""i(long double y);
 my::Complex operator""i(unsigned long long int y);
+
+//some function just to match math
+my::Complex abs(const my::Complex& z);
+my::Complex conj(const my::Complex& z);
+my::Complex Re(const my::Complex& z);
+my::Complex Im(const my::Complex& z);

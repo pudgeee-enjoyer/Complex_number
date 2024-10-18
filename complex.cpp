@@ -82,3 +82,17 @@ my::Complex operator""i(long double y) {
 my::Complex operator""i(unsigned long long int y) {
     return {0, static_cast<long double>(y)};
 }
+
+//some function just to match math
+my::Complex abs(const my::Complex& z) {
+    return z.Abs();
+}
+my::Complex conj(const my::Complex& z) {
+    return z.Conj();
+}
+my::Complex Re(const my::Complex& z) {
+    return z.Re();
+}
+my::Complex Im(const my::Complex& z) {
+    return z.Im();
+}
