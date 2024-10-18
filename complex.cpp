@@ -35,10 +35,11 @@ my::Complex operator-(const my::Complex& z1, const my::Complex& z2) {
     return {z1.Re() - z2.Re(), z1.Im() - z2.Im()};
 }
 my::Complex operator*(const my::Complex& z1, const my::Complex& z2) {
-    return {z1.Re()*z2.Re() - z1.Im()*z2.Im(), z1.Re()*z2.Im() + z2.Re()*z1.Im()};
+    return {z1.Re()*z2.Re() - z1.Im()*z2.Im(), z1.Re()*z2.Im() + z1.Im()*z2.Re()};
 }
 my::Complex operator/(const my::Complex& z1, const my::Complex& z2) {
-    return {(z1.Re()*z2.Re() + z1.Im()*z2.Im())/z2.Re()*z2.Re() + z2.Im()*z2.Im()};
+    return {(z1.Re()*z2.Re() + z1.Im()*z2.Im())/(z2.Re()*z2.Re() + z2.Im()*z2.Im())
+           ,(z2.Re()*z1.Im() - z1.Re()*z2.Im())/(z2.Re()*z2.Re() + z2.Im()*z2.Im()) };
 }
 
 //unary operators
@@ -83,6 +84,7 @@ my::Complex operator""i(unsigned long long int y) {
     return {0, static_cast<long double>(y)};
 }
 
+namespace my {
 //some function just to match math
 my::Complex abs(const my::Complex& z) {
     return z.Abs();
@@ -95,4 +97,5 @@ my::Complex Re(const my::Complex& z) {
 }
 my::Complex Im(const my::Complex& z) {
     return z.Im();
+}
 }
