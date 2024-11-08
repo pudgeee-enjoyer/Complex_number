@@ -86,16 +86,20 @@ my::Complex operator""i(unsigned long long int y) {
 
 namespace my {
 //some function just to match math
-my::Complex abs(const my::Complex& z) {
+long double abs(const my::Complex& z) {
     return z.Abs();
 }
 my::Complex conj(const my::Complex& z) {
     return z.Conj();
 }
-my::Complex Re(const my::Complex& z) {
+long double Re(const my::Complex& z) {
     return z.Re();
 }
-my::Complex Im(const my::Complex& z) {
+long double Im(const my::Complex& z) {
     return z.Im();
 }
+double arg(const my::Complex& z) {
+    return std::atan2(z.Im(), z.Re());
+}
+
 }

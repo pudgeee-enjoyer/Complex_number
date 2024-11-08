@@ -1,4 +1,5 @@
 #include <iosfwd>
+#include <cmath>
 
 namespace my {
 
@@ -52,8 +53,12 @@ std::istream& operator>>(std::istream& in, my::Complex& z);
 my::Complex operator""i(long double y);
 my::Complex operator""i(unsigned long long int y);
 
-//some function just to match math
-my::Complex abs(const my::Complex& z);
+namespace my {
+//some functions just to match math
+long double Re(const my::Complex& z);
+long double Im(const my::Complex& z);
+long double abs(const my::Complex& z);
 my::Complex conj(const my::Complex& z);
-my::Complex Re(const my::Complex& z);
-my::Complex Im(const my::Complex& z);
+//functions
+double arg(const my::Complex& z);
+}
