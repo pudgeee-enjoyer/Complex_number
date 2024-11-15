@@ -98,6 +98,7 @@ long double Re(const my::Complex& z) {
 long double Im(const my::Complex& z) {
     return z.Im();
 }
+
 double arg(const my::Complex& z) {
     return std::atan2(z.Im(), z.Re());
 }
